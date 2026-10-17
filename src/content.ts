@@ -1,6 +1,6 @@
 export const contact = {
   name: "Omar Elhfnawy",
-  email: "omar.elhfnawy@gmail.com",
+  email: "omar.elhfnawy@outlook.com",
   phoneDisplay: "+20 106 626 8058",
   phoneHref: "tel:+201066268058",
   whatsapp: "https://wa.me/201066268058",
