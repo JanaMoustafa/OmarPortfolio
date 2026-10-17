@@ -15,30 +15,11 @@ const hanken = Hanken_Grotesk({
   display: "swap",
 });
 
+// No description, Open Graph or image tags on purpose: shared links (WhatsApp,
+// LinkedIn, etc.) should stay a plain URL rather than unfurl into a preview card.
 export const metadata: Metadata = {
-  title: "Omar Elhfnawy — Business, Marketing & Technology",
-  description:
-    "Omar Elhfnawy uses technology to turn raw ideas into profitable, scalable businesses. Founder of Uni Course and Lokaly, marketer, cloud engineer and property consultant in Cairo.",
-  keywords: [
-    "Omar Elhfnawy",
-    "Entrepreneur",
-    "Uni Course",
-    "Lokaly",
-    "Marketing Agency Egypt",
-    "Business Development",
-    "Cloud Engineer",
-    "Property Consultant",
-    "Cairo",
-  ],
+  title: "Omar Elhfnawy",
   authors: [{ name: "Omar Elhfnawy" }],
-  openGraph: {
-    title: "Omar Elhfnawy — Turning raw ideas into profitable businesses",
-    description:
-      "Founder of Uni Course (300K EGP in its first 3 weeks) and Lokaly marketing agency. Marketing, AI, cloud and sales in Cairo.",
-    type: "website",
-    locale: "en_US",
-    images: [{ url: "/omar.jpg", width: 840, height: 1120, alt: "Omar Elhfnawy" }],
-  },
 };
 
 export const viewport: Viewport = {
