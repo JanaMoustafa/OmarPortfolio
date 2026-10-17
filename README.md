@@ -14,9 +14,11 @@ npm run dev
 ## Editing content
 
 All text (experience, case studies, skills, contact details) lives in `src/content.ts`.
-The downloadable CV is `public/Omar_Elhfnawy_CV.pdf`.
+Omar's portrait is `public/omar.jpg`.
 
 ## Motion
 
-- Hero load sequence and signature stroke are pure CSS, so they never wait on hydration.
+- Hero: letters scatter and assemble into the headline; the portrait opens like an aperture, traces its frame and tilts toward the pointer.
+- Agencies pin and travel sideways on large screens, with an odometer for the revenue figure.
+- About paragraph lights up word by word; the AI section sends pulses along live-measured connectors; the marquee reacts to scroll velocity.
 - Scroll reveals and the journey timeline use GSAP and are disabled for `prefers-reduced-motion`.

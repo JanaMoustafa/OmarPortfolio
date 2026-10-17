@@ -5,10 +5,11 @@ import { Close, Menu } from "./Icons";
 
 const links = [
   { href: "#about", label: "About" },
+  { href: "#agencies", label: "Agencies" },
   { href: "#work", label: "Work" },
+  { href: "#ai", label: "AI" },
   { href: "#journey", label: "Journey" },
-  { href: "#property", label: "Property" },
-  { href: "#skills", label: "Skills" },
+  { href: "#property", label: "Sales" },
 ];
 
 export default function Nav() {
@@ -43,11 +44,11 @@ export default function Nav() {
     >
       <nav className="mx-auto flex h-[72px] max-w-[1320px] items-center justify-between px-5 md:px-10" aria-label="Main">
         <a href="#top" className="group flex items-baseline gap-3" aria-label="Omar Elhfnawy, back to top">
-          <span className="font-display text-3xl italic leading-none text-claret">O</span>
+          <span className="font-display text-3xl italic leading-none text-rose">O</span>
           <span className="font-display text-lg tracking-wide">Omar Elhfnawy</span>
         </a>
 
-        <ul className="hidden items-center gap-9 text-[15px] text-muted md:flex">
+        <ul className="hidden items-center gap-7 text-[15px] text-muted lg:flex xl:gap-9">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="relative py-2 transition-colors duration-200 hover:text-ivory">
@@ -59,14 +60,14 @@ export default function Nav() {
 
         <a
           href="#contact"
-          className="hidden rounded-full border border-burgundy px-5 py-2.5 text-[15px] transition-colors duration-200 hover:bg-burgundy md:inline-block"
+          className="hidden rounded-full border border-rose/60 px-5 py-2.5 text-[15px] transition-colors duration-200 hover:bg-rose hover:text-ink lg:inline-block"
         >
           Let&apos;s talk
         </a>
 
         <button
           type="button"
-          className="-mr-2 flex h-11 w-11 items-center justify-center md:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -78,7 +79,7 @@ export default function Nav() {
 
       <div
         id="mobile-menu"
-        className={`grid overflow-hidden transition-[grid-template-rows] duration-500 ease-out md:hidden ${
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-500 ease-out lg:hidden ${
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >

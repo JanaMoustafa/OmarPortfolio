@@ -6,41 +6,93 @@ export const contact = {
   whatsapp: "https://wa.me/201066268058",
   linkedin: "https://www.linkedin.com/in/omar-elhfnawy-21774b376/",
   location: "Cairo, Egypt",
-  cv: "/Omar_Elhfnawy_CV.pdf",
 };
 
+/** Ordered by priority: business first, then marketing and tech, then sales. */
 export const practices = [
+  {
+    id: "business",
+    title: "Business building",
+    line: "Two agencies launched, one at 300K EGP in its first three months.",
+  },
+  {
+    id: "marketing",
+    title: "Marketing & AI",
+    line: "Strategy, media buying and AI-assisted content that turns into revenue.",
+  },
   {
     id: "cloud",
     title: "Cloud & DevOps",
     line: "Reliable infrastructure and systems that scale.",
   },
   {
-    id: "business",
-    title: "Business building",
-    line: "From idea to a company with a roadmap.",
-  },
-  {
-    id: "marketing",
-    title: "Marketing",
-    line: "Brands, content and leads that turn into revenue.",
-  },
-  {
     id: "sales",
     title: "Sales & real estate",
-    line: "Investment advice and high-value closings.",
+    line: "Consultative selling, AI-assisted follow-up and high-value closings.",
   },
 ] as const;
 
 export const facts = [
-  { value: "IT Gate", label: "Cloud engineering internship" },
-  { value: "Lokaly", label: "Founder & CEO" },
+  { value: "300K EGP", label: "Uni Course revenue in its first 3 months" },
+  { value: "2 agencies", label: "Founded: learning and marketing" },
   { value: "5 markets", label: "Property sales across Egypt" },
-  { value: "3.4 GPA", label: "Business Informatics, Helwan" },
+  { value: "AI", label: "Built into marketing and sales" },
+];
+
+export type Agency = {
+  id: string;
+  name: string;
+  kind: string;
+  role: string;
+  launched: string;
+  launchedIso: string;
+  summary: string;
+  model: string;
+  points: { title: string; text: string }[];
+};
+
+export const agencies: Agency[] = [
+  {
+    id: "uni-course",
+    name: "Uni Course",
+    kind: "Learning agency",
+    role: "Founder",
+    launched: "1 May 2025",
+    launchedIso: "2025-05-01",
+    summary:
+      "An education venture that gives university students structured, major-specific courses. We record university doctors and teaching assistants explaining academic topics and full courses, and students pay for access to those videos on our own platform.",
+    model:
+      "We built the whole strategy around a customised learning platform, backed by an operating structure that covers academic delivery, customer care, student follow-up and operations.",
+    points: [
+      { title: "Customised platform", text: "A dedicated learning platform built around paid student access to recorded courses." },
+      { title: "Academic content", text: "Recorded lectures from university doctors and TAs, organised by major and course." },
+      { title: "Student support", text: "Customer care and follow-up that keep students on track through the semester." },
+      { title: "Operations", text: "Coordinating instructors, content delivery and the team behind it." },
+    ],
+  },
+  {
+    id: "lokaly",
+    name: "Lokaly",
+    kind: "Marketing agency",
+    role: "Founder & CEO",
+    launched: "1 March 2026",
+    launchedIso: "2026-03-01",
+    summary:
+      "A growth-focused marketing agency helping businesses strengthen their market presence, reach the right audiences, and turn marketing into measurable business outcomes.",
+    model:
+      "We combine strategic planning, performance marketing, creative production and account management into one integrated service, shaped around each client's goals, with AI built into research, content and campaign workflows.",
+    points: [
+      { title: "Marketing strategy", text: "Market research, audience analysis, positioning, campaign planning and growth strategy." },
+      { title: "Media buying", text: "Paid advertising, audience targeting, budget allocation and performance analysis." },
+      { title: "Video production", text: "Video for digital platforms, ad campaigns and brand storytelling." },
+      { title: "Creative & content", text: "Creative concepts and content that strengthen brand identity and engagement." },
+      { title: "Account management", text: "Client relationships, deliverables and progress aligned with business goals." },
+    ],
+  },
 ];
 
 export type CaseStudy = {
-  id: string;
+  id: "business" | "marketing" | "cloud" | "sales";
   practice: string;
   title: string;
   org: string;
@@ -52,13 +104,47 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: "business",
+    practice: "Business building",
+    title: "From raw idea to running business",
+    org: "Uni Course · Lokaly · Enactus",
+    period: "2025 – Present",
+    summary:
+      "I build businesses from the idea up: validating the market, defining the model and roadmap, building partnerships, and running operations until the numbers work.",
+    role: [
+      "Founded Uni Course and grew it to 300K EGP in revenue within its first three months.",
+      "Founded Lokaly and defined its vision, service model and long-term roadmap.",
+      "Identify market opportunities and validate ideas before committing to build.",
+      "Build partnerships with businesses, instructors and strategic stakeholders.",
+      "Led business development at Enactus, shaping growth strategies and sponsorships.",
+    ],
+    stack: ["Business models", "Strategy", "Market research", "Partnerships", "Operations"],
+  },
+  {
+    id: "marketing",
+    practice: "Marketing & AI",
+    title: "Marketing that pays for itself",
+    org: "Lokaly · August Real Estate",
+    period: "2025 – Present",
+    summary:
+      "Growth-focused marketing tied to business outcomes, not vanity metrics. I use AI across research, content and creative so campaigns move faster and decisions are better informed.",
+    role: [
+      "Plan strategy, positioning and campaigns from audience and market research.",
+      "Run media buying and performance marketing, from targeting to budget allocation.",
+      "Lead video, creative and content production for brands and campaigns.",
+      "Use AI for research, content creation, creative ideation and marketing workflows.",
+      "Generate my own qualified real-estate leads through digital channels.",
+    ],
+    stack: ["Marketing strategy", "Media buying", "Performance marketing", "Video production", "AI workflows"],
+  },
+  {
     id: "cloud",
     practice: "Cloud & DevOps",
     title: "Cloud infrastructure, end to end",
     org: "IT Gate",
     period: "Aug 2025 – Dec 2025",
     summary:
-      "A hands-on internship where I helped design, deploy and run scalable, secure cloud environments, from compute and storage to the network underneath them.",
+      "A hands-on internship where I helped design, deploy and run scalable, secure cloud environments. It's also why I can build the technology behind my own businesses.",
     role: [
       "Supported the design and architecture of scalable, secure cloud infrastructure.",
       "Deployed and managed compute, storage and networking services.",
@@ -66,58 +152,47 @@ export const caseStudies: CaseStudy[] = [
       "Monitored systems for performance, reliability and availability.",
       "Troubleshot infrastructure, networking and system-level issues.",
     ],
-    stack: ["AWS", "Azure", "Docker", "Kubernetes", "Linux", "CI/CD", "CCNA", "MCSA"],
-  },
-  {
-    id: "business",
-    practice: "Business building",
-    title: "Lokaly Egypt",
-    org: "Founder & CEO",
-    period: "Dec 2025 – Present",
-    summary:
-      "A platform connecting local businesses with digital opportunities. I founded it and own the vision, the product strategy and the long-term roadmap.",
-    role: [
-      "Defined the company vision, product strategy and business roadmap.",
-      "Identified market opportunities and validated ideas before building.",
-      "Built partnerships with local businesses and strategic stakeholders.",
-      "Oversee operations, growth strategy and brand positioning.",
-    ],
-    stack: ["Strategy", "Partnerships", "Operations", "Brand positioning"],
-  },
-  {
-    id: "marketing",
-    practice: "Marketing",
-    title: "Digital marketing that feeds sales",
-    org: "Lokaly · August Real Estate",
-    period: "2025 – Present",
-    summary:
-      "A background in digital marketing and tech means I don't wait for leads: I generate my own qualified pipeline and help local brands build theirs.",
-    role: [
-      "Generate my own qualified real-estate leads through digital channels.",
-      "Help local businesses grow through strategic marketing and content.",
-      "Shape brand positioning for Lokaly and its partners.",
-    ],
-    stack: ["Lead generation", "Content strategy", "Branding", "AI tools"],
+    stack: ["AWS", "Azure", "Docker", "Kubernetes", "Linux", "CI/CD", "Terraform"],
   },
   {
     id: "sales",
     practice: "Sales & real estate",
-    title: "Residential and investment property",
+    title: "Sales and business development",
     org: "August Real Estate",
     period: "Jan 2026 – Present",
     summary:
-      "I advise buyers and investors across Egypt's major destinations in both primary and resale markets, and I consistently exceed my sales targets.",
+      "A commercially driven approach to sales and client relationships: consultative selling, careful qualification and consistent follow-up that moves opportunities through the pipeline.",
     role: [
-      "Drive residential and investment sales across five key destinations.",
-      "Run the full sales cycle, from cold calling to closing.",
-      "Lead investment consultations and reposition clients toward better-fit opportunities.",
-      "Close high-value transactions through direct sales and broker networks.",
+      "Run consultative sales and client relationship management in CRM-based workflows.",
+      "Qualify leads and manage the pipeline from first call to conversion.",
+      "Handle negotiation and objections, repositioning clients toward better-fit opportunities.",
+      "Use AI to support lead qualification, customer communication and follow-up.",
+      "Coordinate with the sales team to close high-value transactions.",
     ],
-    stack: ["Consultative selling", "Negotiation", "Client needs analysis", "Broker networks"],
+    stack: ["Consultative selling", "CRM workflows", "Pipeline management", "Negotiation", "AI-assisted follow-up"],
   },
 ];
 
+export const ai = {
+  vision:
+    "I believe the next generation of competitive businesses will be built around intelligent systems, streamlined operations and the effective use of technology.",
+  areas: [
+    { id: "marketing", title: "Marketing", text: "Research, content creation, creative ideation and marketing workflows." },
+    { id: "sales", title: "Sales", text: "Lead qualification, customer communication and follow-up." },
+    { id: "tech", title: "Technical work", text: "Research, scripting, troubleshooting and documentation." },
+    { id: "ops", title: "Operations", text: "Finding repetitive business processes worth automating." },
+  ],
+};
+
 export const journey = [
+  {
+    when: "May 2025",
+    until: "Present",
+    title: "Founder",
+    org: "Uni Course",
+    track: "Business",
+    text: "Launched a learning agency with its own platform. 300K EGP in revenue within the first three months.",
+  },
   {
     when: "Aug 2025",
     until: "Dec 2025",
@@ -132,23 +207,23 @@ export const journey = [
     title: "Head of Business Development",
     org: "Enactus",
     track: "Business",
-    text: "Researched partnership and sponsorship opportunities, shaped growth strategies and turned ideas into scalable, impactful projects with cross-functional teams.",
-  },
-  {
-    when: "Dec 2025",
-    until: "Present",
-    title: "Founder & CEO",
-    org: "Lokaly Egypt",
-    track: "Business",
-    text: "Building a platform that connects local businesses with digital opportunities.",
+    text: "Researched partnership and sponsorship opportunities, shaped growth strategies and turned ideas into scalable, impactful projects.",
   },
   {
     when: "Jan 2026",
     until: "Present",
     title: "Property Consultant",
     org: "August Real Estate",
-    track: "Property",
+    track: "Sales",
     text: "Primary and resale sales across New Cairo, the New Administrative Capital, North Coast, Sheikh Zayed and Ain Sokhna.",
+  },
+  {
+    when: "Mar 2026",
+    until: "Present",
+    title: "Founder & CEO",
+    org: "Lokaly",
+    track: "Marketing",
+    text: "Launched a growth-focused marketing agency: strategy, media buying, video and creative production.",
   },
 ];
 
@@ -162,23 +237,24 @@ export const destinations = [
 
 export const salesCycle = [
   { step: "Prospect", text: "Cold calling, fresh lead generation and broker networks." },
+  { step: "Qualify", text: "AI-assisted qualification to separate serious buyers early." },
   { step: "Consult", text: "Investment consultations built on the client's real goals." },
-  { step: "Qualify", text: "Separating serious buyers from browsers early." },
-  { step: "Reposition", text: "Handling objections and steering toward the better-fit unit." },
-  { step: "Close", text: "Negotiating and closing high-value transactions." },
+  { step: "Negotiate", text: "Handling objections and steering toward the better-fit unit." },
+  { step: "Close & follow up", text: "Closing high-value deals and keeping the relationship going." },
 ];
 
 export const skillGroups = [
-  { name: "Cloud platforms", items: ["AWS", "Azure", "Cloud monitoring"] },
-  { name: "Containers & delivery", items: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "CI/CD"] },
-  { name: "Infrastructure as code", items: ["Terraform", "CloudFormation", "IaC"] },
-  { name: "Systems & networking", items: ["Linux", "Windows Server", "Virtualization", "Networking", "CCNA", "MCSA"] },
+  { name: "Business", items: ["Business development", "Business models", "Strategy", "Market research", "Partnerships", "Operations"] },
+  { name: "Marketing", items: ["Marketing strategy", "Media buying", "Performance marketing", "Video production", "Creative & content", "Account management"] },
+  { name: "AI & automation", items: ["AI-assisted research", "AI content creation", "AI sales follow-up", "Process automation", "Leveraging AI tools"] },
+  { name: "Sales", items: ["Consultative selling", "CRM workflows", "Pipeline management", "Negotiation", "Objection handling", "Sales team coordination"] },
+  { name: "Cloud & delivery", items: ["AWS", "Azure", "Docker", "Kubernetes", "Jenkins", "GitHub Actions"] },
+  { name: "Infrastructure", items: ["Terraform", "CloudFormation", "Linux", "Windows Server", "Virtualization", "Networking"] },
   { name: "Code & data", items: ["Bash", "PowerShell", "Python", ".NET full-stack", "Databases", "Security"] },
-  { name: "People & commerce", items: ["Sales closing", "Client needs analysis", "Persuasion", "Negotiation", "Conflict resolution", "Networking"] },
   { name: "Leadership", items: ["Strategic thinking", "Decision making", "Communication", "Emotional intelligence", "Teamwork", "Adaptability"] },
 ];
 
 export const marquee = [
-  "AWS", "Azure", "Kubernetes", "Docker", "Terraform", "Linux", "GitHub Actions", "Jenkins",
-  "Python", "PowerShell", "Lead generation", "Negotiation", "Brand strategy", "Investment consulting",
+  "Business development", "Uni Course", "Lokaly", "Media buying", "AI workflows", "Performance marketing",
+  "Video production", "Consultative sales", "AWS", "Kubernetes", "Terraform", "Negotiation",
 ];

@@ -11,7 +11,7 @@ export default function Work() {
             A closer look at the work
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-muted">
-            Four practices that feed each other: the infrastructure, the company, the audience and the deal.
+            Business first, then marketing and tech, then sales. Each practice feeds the next.
           </p>
         </Reveal>
 
@@ -25,7 +25,7 @@ export default function Work() {
                 className="grid scroll-mt-24 gap-8 border-t border-line py-14 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-16 md:py-20"
               >
                 <header className="md:sticky md:top-28 md:self-start">
-                  <p className="flex items-center gap-2.5 text-[15px] text-claret">
+                  <p className="flex items-center gap-2.5 text-[15px] text-rose">
                     <Icon width={18} height={18} />
                     {c.practice}
                   </p>
@@ -44,7 +44,7 @@ export default function Work() {
                   <ul data-reveal className="mt-8 space-y-3.5">
                     {c.role.map((r) => (
                       <li key={r} className="flex gap-4 text-[16px] leading-relaxed text-ivory/75">
-                        <span aria-hidden className="mt-[0.7em] h-px w-5 shrink-0 bg-claret" />
+                        <span aria-hidden className="mt-[0.7em] h-px w-5 shrink-0 bg-rose" />
                         {r}
                       </li>
                     ))}

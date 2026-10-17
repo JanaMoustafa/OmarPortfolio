@@ -1,8 +1,8 @@
 import { marquee, skillGroups } from "@/content";
 import Reveal from "./Reveal";
+import VelocityMarquee from "./VelocityMarquee";
 
 export default function Skills() {
-  const row = [...marquee, ...marquee];
   return (
     <section id="skills" className="py-24 md:py-36">
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
@@ -11,27 +11,20 @@ export default function Skills() {
             The toolkit
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-muted">
-            Technical depth for building systems, and the people skills to sell what gets built.
+            Business and marketing first, AI throughout, and the technical depth to build what the business needs.
           </p>
         </Reveal>
       </div>
 
-      <div className="marquee mt-14 overflow-hidden border-y border-line py-6" aria-hidden>
-        <div className="marquee-track flex w-max gap-12 whitespace-nowrap font-display text-[clamp(1.75rem,3.5vw,3rem)] italic text-ivory/30">
-          {row.map((m, i) => (
-            <span key={i} className="flex items-center gap-12">
-              {m}
-              <span className="h-2 w-2 rotate-45 bg-burgundy" />
-            </span>
-          ))}
-        </div>
+      <div className="mt-14">
+        <VelocityMarquee items={marquee} />
       </div>
 
       <div className="mx-auto max-w-[1320px] px-5 md:px-10">
         <Reveal as="div" stagger className="mt-16 grid gap-x-12 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((g) => (
             <div key={g.name} data-reveal>
-              <h3 className="border-b border-line pb-3 text-[15px] text-claret">{g.name}</h3>
+              <h3 className="border-b border-line pb-3 text-[15px] text-rose">{g.name}</h3>
               <ul className="mt-4 space-y-2 text-[16px] text-ivory/85">
                 {g.items.map((s) => (
                   <li key={s}>{s}</li>
@@ -39,14 +32,10 @@ export default function Skills() {
               </ul>
             </div>
           ))}
-          <div data-reveal>
-            <h3 className="border-b border-line pb-3 text-[15px] text-claret">Languages</h3>
-            <ul className="mt-4 space-y-2 text-[16px] text-ivory/85">
-              <li>Arabic, native</li>
-              <li>English, B2 advanced</li>
-            </ul>
-          </div>
         </Reveal>
+        <p className="mt-14 border-t border-line pt-6 text-[15px] text-muted">
+          Languages: <span className="text-ivory/85">Arabic (native), English (B2, advanced)</span>
+        </p>
       </div>
     </section>
   );

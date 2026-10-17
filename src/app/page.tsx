@@ -1,4 +1,6 @@
 import About from "@/components/About";
+import Agencies from "@/components/Agencies";
+import AISection from "@/components/AISection";
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Journey from "@/components/Journey";
@@ -22,7 +24,9 @@ export default function Home() {
       <main id="main">
         <Hero />
         <About />
+        <Agencies />
         <Work />
+        <AISection />
         <Journey />
         <Property />
         <Skills />
