@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Omar Elhfnawy — Turning raw ideas into profitable businesses",
     description:
-      "Founder of Uni Course (300K EGP in its first 3 months) and Lokaly marketing agency. Marketing, AI, cloud and sales in Cairo.",
+      "Founder of Uni Course (300K EGP in its first 3 weeks) and Lokaly marketing agency. Marketing, AI, cloud and sales in Cairo.",
     type: "website",
     locale: "en_US",
     images: [{ url: "/omar.jpg", width: 840, height: 1120, alt: "Omar Elhfnawy" }],

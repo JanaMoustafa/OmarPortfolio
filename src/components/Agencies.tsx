@@ -131,7 +131,7 @@ function AgencyPanel({ agency: a }: { agency: Agency }) {
                 className="whitespace-nowrap font-display text-[clamp(3rem,5vw,4.75rem)] text-rose"
               />
               <p className="mt-4 max-w-[22rem] text-[16px] leading-snug text-ivory/85">
-                Revenue within the first three months of launch.
+                Revenue within the first three weeks of launch.
               </p>
             </div>
           )}

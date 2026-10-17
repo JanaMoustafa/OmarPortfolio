@@ -24,7 +24,7 @@ export default function About() {
           <WordLight
             className="font-display text-[clamp(1.35rem,2.1vw,1.75rem)] leading-[1.5]"
             emphasis={["300K", "EGP", "AI"]}
-            text="I'm a business builder with a technical edge. I founded Uni Course, a learning agency that made 300K EGP in its first three months, then Lokaly, a growth-focused marketing agency. I integrate AI into how I market and sell, and I can build the cloud infrastructure behind it myself."
+            text="I'm a business builder with a technical edge. I founded Uni Course, a learning agency that made 300K EGP in its first three weeks, then Lokaly, a growth-focused marketing agency. I integrate AI into how I market and sell, and I can build the cloud infrastructure behind it myself."
           />
           <Reveal>
             <p className="mt-8 max-w-[38rem] text-[17px] leading-[1.75] text-ivory/70">

@@ -13,7 +13,7 @@ export const practices = [
   {
     id: "business",
     title: "Business building",
-    line: "Two agencies launched, one at 300K EGP in its first three months.",
+    line: "Two agencies launched, one at 300K EGP in its first three weeks.",
   },
   {
     id: "marketing",
@@ -33,7 +33,7 @@ export const practices = [
 ] as const;
 
 export const facts = [
-  { value: "300K EGP", label: "Uni Course revenue in its first 3 months" },
+  { value: "300K EGP", label: "Uni Course revenue in its first 3 weeks" },
   { value: "2 agencies", label: "Founded: learning and marketing" },
   { value: "5 markets", label: "Property sales across Egypt" },
   { value: "AI", label: "Built into marketing and sales" },
@@ -112,7 +112,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "I build businesses from the idea up: validating the market, defining the model and roadmap, building partnerships, and running operations until the numbers work.",
     role: [
-      "Founded Uni Course and grew it to 300K EGP in revenue within its first three months.",
+      "Founded Uni Course and grew it to 300K EGP in revenue within its first three weeks.",
       "Founded Lokaly and defined its vision, service model and long-term roadmap.",
       "Identify market opportunities and validate ideas before committing to build.",
       "Build partnerships with businesses, instructors and strategic stakeholders.",
@@ -191,7 +191,7 @@ export const journey = [
     title: "Founder",
     org: "Uni Course",
     track: "Business",
-    text: "Launched a learning agency with its own platform. 300K EGP in revenue within the first three months.",
+    text: "Launched a learning agency with its own platform. 300K EGP in revenue within the first three weeks.",
   },
   {
     when: "Aug 2025",

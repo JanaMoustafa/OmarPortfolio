@@ -66,7 +66,7 @@ export default function Hero() {
             />
 
             <p className="fade-in mt-9 max-w-[36rem] text-lg leading-relaxed text-ivory/80" style={d(1.3)}>
-              I&apos;ve founded a learning agency that made 300K EGP in its first three months and a growth-focused
+              I&apos;ve founded a learning agency that made 300K EGP in its first three weeks and a growth-focused
               marketing agency, and I bring AI into how I market and sell, backed by hands-on cloud engineering.
             </p>
 
